@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+<div>
+<h1>Home</h1>
+<p><%= homeparagraph %></p>
+</div>
+<% for(var i=0;i<postList.length;i++) {%>
+    <div>
+        <h2><%= postList[i].title %></h2>
+        <p> <%=postList[i].content.substring(0,100) %>..<a href="/posts/<%=postList[i].title %>">Read me</a></p>
+    </div>
+    <% } %>
+    <div>
+        <button class="btn btn-primary btn-lg newB"><a class="comLink" href="/compose">+</a></button>
+    </div>
+<%- include('partials/footer') -%>
